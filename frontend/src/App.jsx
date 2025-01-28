@@ -19,7 +19,7 @@ const App = () => {
     checkAuth();
   }, [checkAuth]);
 
-  console.log({ authUser });
+  //  console.log({ authUser });
 
   //Spinner while checking auth
   if (isCheckingAuth && !authUser)
@@ -31,6 +31,7 @@ const App = () => {
 
   return (
     <div>
+      <Toaster />
       <Navbar />
       <Routes>
         <Route
@@ -51,7 +52,6 @@ const App = () => {
           element={authUser ? <ProfilePage /> : <Navigate to="/login" />}
         />
       </Routes>
-      <Toaster />
     </div>
   );
 };
