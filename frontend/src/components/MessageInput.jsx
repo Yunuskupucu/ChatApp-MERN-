@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 const MessageInput = () => {
   const [text, setText] = useState('');
   const [imagePreview, setImagePreview] = useState(null);
-  const fileInputRef = useRef();
+  const fileInputRef = useRef(null);
   const { sendMessage } = useChatStore();
 
   const handleImageChange = (e) => {
@@ -17,7 +17,7 @@ const MessageInput = () => {
     }
 
     const reader = new FileReader();
-    reader.onload = () => {
+    reader.onloadend = () => {
       setImagePreview(reader.result);
     };
     reader.readAsDataURL(file);
