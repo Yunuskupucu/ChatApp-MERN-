@@ -23,7 +23,6 @@ const Sidebar = () => {
           <Users className="size-6" />
           <span className="font-medium hidden lg:block">Contacts</span>
         </div>
-        {/* TODO:Online filter toggle*/}
       </div>
       <div className="overflow-y-auto w-full py-3">
         {users.map((user) => (
